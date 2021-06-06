@@ -1,4 +1,4 @@
-package model;
+package com.example.rentalservice.model;
 
 
 public class Movie {
@@ -8,7 +8,7 @@ public class Movie {
     private String director;
     private MovieCategory category;
     private int year;
-    private boolean available = false;
+    private boolean available;
 
     public Long getID() {
         return ID;
