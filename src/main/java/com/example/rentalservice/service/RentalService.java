@@ -22,4 +22,8 @@ public class RentalService {
     public void returnMovie(Long id) {
         restTemplate.put("http://localhost:8080/movies/availability/" + id, null);
     }
+
+    public void rentMovie(Long id) {
+        restTemplate.put("http://localhost:8080/movies/availability/false/" + id, null);
+    }
 }
