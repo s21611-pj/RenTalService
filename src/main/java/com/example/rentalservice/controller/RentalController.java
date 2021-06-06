@@ -2,10 +2,7 @@ package com.example.rentalservice.controller;
 
 import com.example.rentalservice.model.Movie;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.example.rentalservice.service.RentalService;
 
 @RestController
@@ -21,5 +18,11 @@ public class RentalController {
     @GetMapping("/{id}")
     public ResponseEntity<Movie> getMovie(@PathVariable Long id) {
         return ResponseEntity.ok(rentalService.getMovie(id));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> returnMovie(@PathVariable Long id) {
+        rentalService.returnMovie(id);
+        return ResponseEntity.ok().build();
     }
 }
