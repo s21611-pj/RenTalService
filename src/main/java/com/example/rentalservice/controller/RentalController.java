@@ -28,6 +28,7 @@ public class RentalController {
 
     @PutMapping("/false/{id}")
     public ResponseEntity<Void> rentMovie(@PathVariable Long id) {
+
         rentalService.rentMovie(id);
         return ResponseEntity.ok().build();
     }
